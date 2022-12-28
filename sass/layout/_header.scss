@@ -1,4 +1,5 @@
 @import "./sass/abstracts/variables";
+@import "./sass/abstracts/mixins";
 
 .header {
     height: 85vh;
@@ -6,7 +7,7 @@
     background-size: cover;
     background-position: top;
     position: relative;
-    background-image: radial-gradient( circle 610px at 5.2% 51.6%,  #050872 0%, rgba(7,3,53,1) 97.5% );
+    //background-image: radial-gradient( circle 610px at 5.2% 51.6%,  #050872 0%, rgba(7,3,53,1) 97.5% );
 
     @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
@@ -23,10 +24,10 @@
                         rgba($color-primary-dark, 0.8))
     }
 
-    //@include respond(phone) {
-    //    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-    //    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-    //}
+    @include respond(phone) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
 
     &__logo-box {
         position: absolute;
